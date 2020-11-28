@@ -9,12 +9,7 @@ class MayaCalendarBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          this.titleText,
-          style: Theme.of(context).textTheme.headline3,
-        ),
-      ],
+      children: [],
     );
   }
 }
