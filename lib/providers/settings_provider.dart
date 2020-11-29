@@ -11,7 +11,7 @@ class SettingsProvider with ChangeNotifier {
     return _formatList;
   }
 
-  String _format = "dd-MM-yyyy";
+  String _format = "dd-MM-yyyy G";
   DateTime _date = DateTime.now();
 
   String get format {

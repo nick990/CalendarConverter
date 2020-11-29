@@ -14,11 +14,11 @@ class ThemeUtils {
   );
 
   static final gradient1 = LinearGradient(
-    colors: <Color>[
+    colors: [
       color2,
       color2,
       color1,
-    ],
+    ].toList(),
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

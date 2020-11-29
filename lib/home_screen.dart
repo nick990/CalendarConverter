@@ -16,12 +16,6 @@ class _HomeScreenState extends State<HomeScreen> {
   DateTime date;
   final dateController = TextEditingController();
 
-  @override
-  void initState() {
-    var now = DateTime.now();
-    date = new DateTime(now.year, now.month, now.day);
-  }
-
   _setDateController(DateFormat formatter) {
     dateController.text = "${formatter.format(date)}";
   }
@@ -30,8 +24,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final DateTime picked = await showDatePicker(
         context: context,
         initialDate: date,
-        firstDate: DateTime(1900),
-        lastDate: DateTime.now(),
+        firstDate: DateTime(1000),
+        lastDate: DateTime(3000),
         initialDatePickerMode: DatePickerMode.year,
         helpText: 'Select birthday date',
         fieldLabelText: 'Birthday date');
@@ -59,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: GestureDetector(
                   onTap: () => _selectDate(context),
                   child: TextField(
-                    style: Theme.of(context).textTheme.headline3,
+                    // style: Theme.of(context).textTheme.headline3,
                     decoration: InputDecoration(
                       //labelText: 'Gregorian Calendar',
                       disabledBorder: ThemeUtils.textInputBorder,
