@@ -1,11 +1,15 @@
+import 'package:calendar_converter/theme/theme_utils.dart';
 import 'package:flutter/material.dart';
 
 class CalendarItemWidget extends StatelessWidget {
-  String titleText = "";
-  String imageAsset = "";
-  Widget body = Container();
+  final String titleText;
+  final String imageAsset;
+  final Widget body;
   CalendarItemWidget({
     Key key,
+    this.body,
+    this.titleText,
+    this.imageAsset,
   }) : super(key: key);
 
   @override
@@ -18,7 +22,6 @@ class CalendarItemWidget extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(16),
-                  //  bottomLeft: Radius.circular(16),
                 ),
                 child: Container(
                   height: 60,
@@ -30,10 +33,7 @@ class CalendarItemWidget extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: Text(
                       this.titleText,
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline3
-                          .copyWith(color: Colors.white),
+                      style: ThemeUtils.CalendarTitleStyle,
                     ),
                   ),
                 ),
