@@ -1,3 +1,4 @@
+import 'package:calendar_converter/providers/data_provider.dart';
 import 'package:calendar_converter/providers/settings_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,8 +11,9 @@ class FrenchRepublicanCalendarItemWidget extends StatelessWidget {
   DateFormat _format;
   @override
   Widget build(BuildContext context) {
+    final dataProvider = Provider.of<DataProvider>(context);
     final settingsProvider = Provider.of<SettingsProvider>(context);
-    _date = settingsProvider.date;
+    _date = dataProvider.date;
     _format = DateFormat(settingsProvider.format);
     return CalendarItemWidget(
       titleText: 'French Republican',

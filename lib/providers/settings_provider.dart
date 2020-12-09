@@ -12,7 +12,6 @@ class SettingsProvider with ChangeNotifier {
   }
 
   String _format = "dd-MM-yyyy G";
-  DateTime _date = DateTime.now();
 
   String get format {
     return _format;
@@ -20,15 +19,6 @@ class SettingsProvider with ChangeNotifier {
 
   set format(String newValue) {
     _format = newValue;
-    notifyListeners();
-  }
-
-  DateTime get date {
-    return _date;
-  }
-
-  set date(DateTime date) {
-    _date = date;
     notifyListeners();
   }
 }
