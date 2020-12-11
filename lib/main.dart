@@ -1,6 +1,7 @@
 import 'package:calendar_converter/screens/home/home_screen.dart';
 import 'package:calendar_converter/providers/data_provider.dart';
 import 'package:calendar_converter/providers/settings_provider.dart';
+import 'package:calendar_converter/theme/theme_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
+        theme: ThemeUtils.theme,
         title: 'Calendar Converter',
         home: HomeScreen(),
       ),

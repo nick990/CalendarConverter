@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
 class ThemeUtils {
+  static const double defaultPadding = 8.0;
+
   static const Color color1 = Color.fromARGB(255, 76, 95, 215);
   static const Color color2 = Color.fromARGB(255, 114, 50, 189);
   static const Color color3 = Color.fromARGB(255, 255, 220, 125);
   static const Color color4 = Color.fromARGB(255, 244, 111, 48);
   static const Color color5 = Color.fromARGB(255, 215, 58, 73);
+  static const Color illuminating = Color.fromARGB(255, 245, 225, 94);
+  static const Color ultimateGrey = Color.fromARGB(255, 153, 154, 156);
+
+  static const Color primaryColor = illuminating;
+  static const Color titleColor = Colors.white;
 
   static final TextStyle CalendarTitleStyle = TextStyle(
     color: Colors.white,
@@ -15,20 +22,26 @@ class ThemeUtils {
 
   static final gradient1 = LinearGradient(
     colors: [
-      color2,
-      color2,
-      color1,
+      Colors.white,
+      primaryColor,
     ].toList(),
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
   );
 
   static final textInputBorder = OutlineInputBorder(
       borderRadius: BorderRadius.circular(8),
       borderSide: BorderSide(
-        color: Colors.black54,
+        color: Colors.white,
         width: 2,
       )
       //borderSide: BorderSide(width: 2, color: AppTheme.color4),
       );
+
+  static final ThemeData theme = ThemeData(
+    brightness: Brightness.light,
+    appBarTheme: AppBarTheme(),
+    primaryColor: primaryColor,
+    colorScheme: ColorScheme.light(primary: primaryColor),
+  );
 }
