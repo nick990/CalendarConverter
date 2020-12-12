@@ -27,7 +27,7 @@ class CalendarItemWidget extends StatelessWidget {
                   height: 60,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                  color: Colors.lightBlue,
+                  color: ThemeUtils.primaryColor,
                   child: FittedBox(
                     alignment: Alignment.centerLeft,
                     fit: BoxFit.scaleDown,
@@ -55,7 +55,7 @@ class CalendarItemWidget extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      color: Colors.lightBlue,
+                      color: ThemeUtils.primaryColor,
                       padding: const EdgeInsets.all(8.0),
                       child: Image.asset(
                         imageAsset,
@@ -67,7 +67,7 @@ class CalendarItemWidget extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           border: Border.all(
-                            color: Colors.lightBlue,
+                            color: ThemeUtils.primaryColor,
                             width: 5,
                           ),
                         ),
