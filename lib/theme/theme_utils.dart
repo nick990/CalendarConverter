@@ -8,10 +8,10 @@ class ThemeUtils {
   static const Color color3 = Color.fromARGB(255, 255, 220, 125);
   static const Color color4 = Color.fromARGB(255, 244, 111, 48);
   static const Color color5 = Color.fromARGB(255, 215, 58, 73);
-  static const Color illuminating = Color.fromARGB(255, 245, 225, 94);
-  static const Color ultimateGrey = Color.fromARGB(255, 153, 154, 156);
+  static const Color illuminating = Color.fromARGB(255, 245, 223, 77);
+  static const Color ultimateGrey = Color.fromARGB(255, 147, 149, 151);
 
-  static const Color primaryColor = illuminating;
+  static const Color primaryColor = color3;
   static const Color titleColor = Colors.white;
   static const Color ScaffoldBackground = Colors.white;
 
