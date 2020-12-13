@@ -1,9 +1,8 @@
 import 'package:calendar_converter/components/calendar_items/calendar_item.dart';
 import 'package:calendar_converter/providers/data_provider.dart';
+import 'package:calendar_converter/theme/theme_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'caledar_item_widget.dart';
 
 class JulianDayCalendarItemWidget extends StatelessWidget {
   DateTime _date;
@@ -28,9 +27,7 @@ class JulianDayCalendarItemWidget extends StatelessWidget {
       children: [
         Text(
           "$_julianDay",
-          style: TextStyle(
-            fontSize: 20,
-          ),
+          style: ThemeUtils.cardBodyTextStyle,
         ),
       ],
     );

@@ -15,9 +15,9 @@ class ThemeUtils {
   static const Color titleColor = Colors.white;
   static const Color ScaffoldBackground = Colors.white;
 
-  static final TextStyle CalendarTitleStyle = TextStyle(
-    color: Colors.white,
-    fontSize: 40,
+  static final TextStyle cardBodyTextStyle = TextStyle(
+    color: Colors.black54,
+    fontSize: 20,
     fontWeight: FontWeight.bold,
   );
 
