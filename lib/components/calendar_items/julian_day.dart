@@ -7,6 +7,12 @@ import 'package:provider/provider.dart';
 class JulianDayCalendarItemWidget extends StatelessWidget {
   DateTime _date;
   int _julianDay;
+
+  final bool imageOnLeft;
+
+  JulianDayCalendarItemWidget({Key key, this.imageOnLeft = true})
+      : super(key: key);
+
   _compute() {
     int a = (_date.year / 100).floor();
     int b = (a / 4).floor();
@@ -36,6 +42,7 @@ class JulianDayCalendarItemWidget extends StatelessWidget {
       titleText: 'Julian day',
       imageAsset: 'assets/images/maya.png',
       body: body,
+      imageOnLeft: imageOnLeft,
     );
   }
 }

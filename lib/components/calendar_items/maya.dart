@@ -8,6 +8,9 @@ import 'package:intl/intl.dart';
 class MayaCalendarItemWidget extends StatelessWidget {
   DateTime _date;
   DateFormat _format;
+  final bool imageOnLeft;
+
+  MayaCalendarItemWidget({Key key, this.imageOnLeft = true}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +39,7 @@ class MayaCalendarItemWidget extends StatelessWidget {
       titleText: 'Maya',
       imageAsset: 'assets/images/maya.png',
       body: body,
+      imageOnLeft: imageOnLeft,
     );
   }
 }

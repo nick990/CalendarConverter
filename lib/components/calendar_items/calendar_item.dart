@@ -5,12 +5,14 @@ class CalendarItem extends StatelessWidget {
   final String titleText;
   final String imageAsset;
   final Widget body;
+  final bool imageOnLeft;
 
   CalendarItem({
     Key key,
     this.body,
     this.titleText,
     this.imageAsset,
+    this.imageOnLeft = true,
   }) : super(key: key);
 
   @override
@@ -41,14 +43,16 @@ class CalendarItem extends StatelessWidget {
             topRight: Radius.circular(borderRadius),
           ),
         ),
-        padding: const EdgeInsets.only(
-          top: ThemeUtils.defaultPadding,
-          bottom: ThemeUtils.defaultPadding,
-          right: ThemeUtils.defaultPadding * 2,
-          left: r + ThemeUtils.defaultPadding * 2,
+        padding: EdgeInsets.only(
+          right: !imageOnLeft
+              ? (r + ThemeUtils.defaultPadding * 2)
+              : ThemeUtils.defaultPadding * 2,
+          left: imageOnLeft
+              ? (r + ThemeUtils.defaultPadding * 2)
+              : ThemeUtils.defaultPadding * 2,
         ),
         child: FittedBox(
-          alignment: Alignment.centerRight,
+          alignment: imageOnLeft ? Alignment.centerRight : Alignment.centerLeft,
           fit: BoxFit.scaleDown,
           child: Text(
             this.titleText,
@@ -79,9 +83,13 @@ class CalendarItem extends StatelessWidget {
         ),
         padding: EdgeInsets.only(
           top: ThemeUtils.defaultPadding * 2,
-          left: ThemeUtils.defaultPadding * 2 + r,
-          right: ThemeUtils.defaultPadding * 2,
           bottom: ThemeUtils.defaultPadding * 2,
+          left: imageOnLeft
+              ? ThemeUtils.defaultPadding + r
+              : ThemeUtils.defaultPadding * 2,
+          right: !imageOnLeft
+              ? ThemeUtils.defaultPadding + r
+              : ThemeUtils.defaultPadding * 2,
         ),
         child: FittedBox(
           alignment: Alignment.topLeft,
@@ -92,14 +100,15 @@ class CalendarItem extends StatelessWidget {
     );
 
     var card = Positioned.fill(
-      left: r,
+      left: this.imageOnLeft ? r : 0,
+      right: !this.imageOnLeft ? r : 0,
       child: Column(
         children: [
           card_title,
           Container(
             width: double.infinity,
             height: borderWidth,
-            color: borderColor,
+            color: imageBgColor,
           ),
           card_body,
         ],
@@ -108,6 +117,7 @@ class CalendarItem extends StatelessWidget {
 
     var image = Positioned(
       top: h1 - r,
+      right: imageOnLeft ? null : 0,
       child: Container(
         width: r * 2,
         height: r * 2,

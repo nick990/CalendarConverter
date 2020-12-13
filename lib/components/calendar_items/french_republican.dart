@@ -9,6 +9,11 @@ import 'package:intl/intl.dart';
 class FrenchRepublicanCalendarItemWidget extends StatelessWidget {
   DateTime _date;
   DateFormat _format;
+  final bool imageOnLeft;
+
+  FrenchRepublicanCalendarItemWidget({Key key, this.imageOnLeft = true})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final dataProvider = Provider.of<DataProvider>(context);
@@ -22,6 +27,7 @@ class FrenchRepublicanCalendarItemWidget extends StatelessWidget {
         _format.format(_date),
         style: ThemeUtils.cardBodyTextStyle,
       ),
+      imageOnLeft: imageOnLeft,
     );
   }
 }

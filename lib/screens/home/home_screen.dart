@@ -59,8 +59,10 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  FrenchRepublicanCalendarItemWidget(),
                   JulianDayCalendarItemWidget(),
+                  FrenchRepublicanCalendarItemWidget(
+                    imageOnLeft: false,
+                  ),
                   MayaCalendarItemWidget(),
                 ],
               ),
