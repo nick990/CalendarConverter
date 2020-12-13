@@ -1,3 +1,4 @@
+import 'package:calendar_converter/components/calendar_items/french_republican.dart';
 import 'package:calendar_converter/components/calendar_items/julian_day.dart';
 import 'package:calendar_converter/components/calendar_items/maya.dart';
 import 'package:calendar_converter/providers/data_provider.dart';
@@ -58,9 +59,9 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 children: [
+                  FrenchRepublicanCalendarItemWidget(),
                   JulianDayCalendarItemWidget(),
                   MayaCalendarItemWidget(),
-                  // FrenchRepublicanCalendarItemWidget(),
                 ],
               ),
             ),

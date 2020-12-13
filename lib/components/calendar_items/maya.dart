@@ -1,3 +1,4 @@
+import 'package:calendar_converter/components/calendar_items/calendar_item.dart';
 import 'package:calendar_converter/providers/data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -23,7 +24,7 @@ class MayaCalendarItemWidget extends StatelessWidget {
       ],
     );
 
-    return CalendarItemWidget(
+    return CalendarItem(
       titleText: 'Maya',
       imageAsset: 'assets/images/maya.png',
       body: body,

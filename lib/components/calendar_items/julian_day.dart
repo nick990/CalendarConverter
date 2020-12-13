@@ -1,3 +1,4 @@
+import 'package:calendar_converter/components/calendar_items/calendar_item.dart';
 import 'package:calendar_converter/providers/data_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,11 +26,16 @@ class JulianDayCalendarItemWidget extends StatelessWidget {
     var body = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("$_julianDay"),
+        Text(
+          "$_julianDay",
+          style: TextStyle(
+            fontSize: 20,
+          ),
+        ),
       ],
     );
 
-    return CalendarItemWidget(
+    return CalendarItem(
       titleText: 'Julian day',
       imageAsset: 'assets/images/maya.png',
       body: body,

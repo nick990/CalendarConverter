@@ -13,6 +13,7 @@ class ThemeUtils {
 
   static const Color primaryColor = illuminating;
   static const Color titleColor = Colors.white;
+  static const Color ScaffoldBackground = Colors.white;
 
   static final TextStyle CalendarTitleStyle = TextStyle(
     color: Colors.white,
@@ -43,5 +44,6 @@ class ThemeUtils {
     appBarTheme: AppBarTheme(),
     primaryColor: primaryColor,
     colorScheme: ColorScheme.light(primary: primaryColor),
+    scaffoldBackgroundColor: ScaffoldBackground,
   );
 }
