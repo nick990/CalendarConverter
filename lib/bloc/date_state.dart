@@ -3,7 +3,12 @@ part of 'date_bloc.dart';
 @immutable
 abstract class DateState extends Equatable {
   final DateTime date;
-  const DateState(this.date);
+  int _julianDay;
+  DateState(this.date) {
+    _julianDay = CalendarUtils.getJulianDayFromDateTime(date);
+  }
+
+  int get julianDay => _julianDay;
 
   @override
   List<Object> get props => [date];
