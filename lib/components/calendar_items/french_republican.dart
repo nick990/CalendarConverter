@@ -25,7 +25,6 @@ class FrenchRepublicanCalendarItemWidget extends StatelessWidget {
       imageAsset: 'assets/images/napoleon.png',
       body: Text(
         _format.format(_date),
-        style: ThemeUtils.cardBodyTextStyle,
       ),
       imageOnLeft: imageOnLeft,
     );
