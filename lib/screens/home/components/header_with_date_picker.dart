@@ -1,17 +1,31 @@
+import 'package:calendar_converter/bloc/date_bloc.dart';
 import 'package:calendar_converter/theme/theme_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HeaderWithDatePicker extends StatelessWidget {
-  final Function selectDate;
   final TextEditingController dateController;
   final String format;
 
   const HeaderWithDatePicker({
     Key key,
-    @required this.selectDate,
     @required this.dateController,
     @required this.format,
   }) : super(key: key);
+
+  _selectDate(BuildContext context) async {
+    final dateBloc = BlocProvider.of<DateBloc>(context);
+    final DateTime picked = await showDatePicker(
+      context: context,
+      initialDate: dateBloc.state.date,
+      firstDate: DateTime(1582, 10, 15),
+      lastDate: DateTime(3000),
+      initialDatePickerMode: DatePickerMode.year,
+    );
+    if (picked != null && picked != dateBloc.state.date) {
+      dateBloc.add(DatePicked(date: picked));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +88,7 @@ class HeaderWithDatePicker extends StatelessWidget {
               vertical: ThemeUtils.defaultPadding,
             ),
             child: GestureDetector(
-              onTap: () => selectDate(context),
+              onTap: () => _selectDate(context),
               child: TextField(
                 style: Theme.of(context).textTheme.headline4,
                 decoration: InputDecoration(
