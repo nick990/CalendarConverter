@@ -1,5 +1,4 @@
 class CalendarUtils {
-  //August 11, 3114 BC
   static getJulianDayFromDateTime(DateTime date) {
     int julianDay;
     int a = (date.year / 100).floor();
@@ -25,5 +24,23 @@ class CalendarUtils {
       }
     }
     return formattedString;
+  }
+
+  static String getMayaLongCount(int jd) {
+    //August 11, 3114 BC
+    //CalendarUtils.getJulianDayFromDateTime(new DateTime(-3113, 8, 11));
+    int creationJD = 584282;
+    int dayElapsed = jd - creationJD;
+    int baktun, katun, tun, uinal, kin;
+    baktun = dayElapsed ~/ 144000;
+    dayElapsed -= (baktun * 144000);
+    katun = dayElapsed ~/ 7200;
+    dayElapsed -= (katun * 7200);
+    tun = dayElapsed ~/ 360;
+    dayElapsed -= (tun * 360);
+    uinal = dayElapsed ~/ 20;
+    dayElapsed -= (uinal * 20);
+    kin = dayElapsed;
+    return "$baktun.$katun.$tun.$uinal.$kin";
   }
 }

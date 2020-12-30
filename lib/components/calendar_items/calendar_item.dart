@@ -91,9 +91,13 @@ class CalendarItem extends StatelessWidget {
               ? ThemeUtils.defaultPadding + r
               : ThemeUtils.defaultPadding * 2,
         ),
-        child: DefaultTextStyle(
-          child: this.body,
-          style: ThemeUtils.cardBodyTextStyle,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          alignment: Alignment.topLeft,
+          child: DefaultTextStyle(
+            child: this.body,
+            style: ThemeUtils.cardBodyTextStyle,
+          ),
         ),
       ),
     );
